@@ -11,8 +11,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-app.use(cors());
 
+
+var corsOptions = {
+    origin: 'https://meli-app-ng.herokuapp.com',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
 
 const { config } = require('./config/index');
 
