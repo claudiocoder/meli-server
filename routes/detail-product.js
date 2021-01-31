@@ -1,5 +1,6 @@
 const async = require('async');
 const request = require('request');
+const parsedDetailProduct = require('../models/detailProducts');
 
 function getDetailProduct(app) {
     app.get('/api/items/:id', function (req, res) {
@@ -24,7 +25,7 @@ function getDetailProduct(app) {
         async.map(urls, httpGet, function (err, response) {
             if (err) return console.log(err);
             products = response;
-            res.send(products)
+            res.send(parsedDetailProduct(products))
         });
     });
 }
