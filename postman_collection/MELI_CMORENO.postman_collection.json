@@ -11,11 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}api/items?query=ipod",
+					"raw": "{{url}}/api/items?query=ipod",
 					"host": [
-						"{{url}}api"
+						"{{url}}"
 					],
 					"path": [
+						"api",
 						"items"
 					],
 					"query": [
