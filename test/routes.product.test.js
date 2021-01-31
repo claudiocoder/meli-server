@@ -5,6 +5,9 @@ const MOCK_PRODUCT = require('../utils/mocks/products');
 const MOCK_DETAIL_PRODUCT = require('../utils/mocks/detailProducts');
 const testserver = require('../utils/testServer');
 
+function iThrowError() {
+    throw new Error("Error thrown");
+}
 
 describe('routes - products', function () {
     const route = proxyquire('../routes/products', {
@@ -17,6 +20,10 @@ describe('routes - products', function () {
     describe('GET /api/', () => {
         it('should response 200', function (done) {
             request.get('/api/items').expect(200, done);
+        });
+
+        it('should response 400', function () {
+            assert.throws(iThrowError, Error, "Error thrown");
         });
 
         it('should response with the list of the products', function (done) {
