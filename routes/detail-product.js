@@ -1,6 +1,6 @@
 const async = require('async');
 const request = require('request');
-const parsedDetailProduct = require('../models/detailProducts');
+const parsedDetailProduct = require('../services/detailProducts');
 
 function getDetailProduct(app) {
     app.get('/api/items/:id', function (req, res) {

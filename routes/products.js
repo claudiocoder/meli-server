@@ -1,7 +1,6 @@
 const async = require('async');
 const request = require('request');
-
-const parsefunction = require('../models/parseProducts');
+const parsefunction = require('../services/parseProducts');
 
 function getAllProducts(app) {
     app.get('/api/items/', function (req, res) {
