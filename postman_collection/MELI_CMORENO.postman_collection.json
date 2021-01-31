@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "f713a434-ce94-4c7e-9f1c-0f0baef986c2",
+		"name": "MELI_CMORENO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/items?query=ipod",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"items"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "ipod"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}api/items/MLA899752125",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"items",
+						"MLA899752125"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
