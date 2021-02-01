@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f713a434-ce94-4c7e-9f1c-0f0baef986c2",
+		"_postman_id": "d057228c-44cf-4971-8edf-f0d05c3e918e",
 		"name": "MELI_CMORENO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,9 +9,15 @@
 			"name": "Products List",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "{{url}}/api/items?query=ipod",
+					"raw": "{{url}}/api/items?query=silla",
 					"host": [
 						"{{url}}"
 					],
@@ -22,7 +28,7 @@
 					"query": [
 						{
 							"key": "query",
-							"value": "ipod"
+							"value": "silla"
 						}
 					]
 				}
@@ -41,11 +47,12 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}api/items/MLA899752125",
+					"raw": "{{url}}/api/items/MLA899752125",
 					"host": [
-						"{{url}}api"
+						"{{url}}"
 					],
 					"path": [
+						"api",
 						"items",
 						"MLA899752125"
 					]
