@@ -26,7 +26,7 @@ function parsefunction(objectFromRequest) {
     })
 
     res = {
-        'autor': {
+        'author': {
             'name': 'Claudio',
             'lastName': 'Moreno'
         },
