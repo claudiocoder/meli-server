@@ -3,7 +3,7 @@ const request = require('request');
 const parsefunction = require('../services/parseProducts');
 
 function getAllProducts(app) {
-    app.get('/api/items/', function (req, res) {
+    app.get('/api/items/', function (req, res, next) {
         let products = {}
 
         const urls = [
@@ -22,7 +22,7 @@ function getAllProducts(app) {
             );
         }
         async.map(urls, httpGet, function (err, response) {
-            if (err) return console.log(err);
+            if (err) return next(err)
             products = response;
             res.send(parsefunction(products))
         });

@@ -3,7 +3,7 @@ const request = require('request');
 const parsedDetailProduct = require('../services/detailProducts');
 
 function getDetailProduct(app) {
-    app.get('/api/items/:id', function (req, res) {
+    app.get('/api/items/:id', function (req, res, next) {
 
         let products = {}
         const urls = [
@@ -23,7 +23,7 @@ function getDetailProduct(app) {
             );
         }
         async.map(urls, httpGet, function (err, response) {
-            if (err) return console.log(err);
+            if (err) return next(err)
             products = response;
             res.send(parsedDetailProduct(products))
         });
